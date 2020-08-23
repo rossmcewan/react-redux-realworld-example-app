@@ -45,7 +45,7 @@ resources:
                       - - arn:aws:s3
                         - ''
                         - ''
-                        - oktank-frontend-dev-frontpagewebsitebucket-1hdoaboavp2oh/*
+                        - ${file(./config.json):bucket}/*
                 - Effect: Allow
                   Action: cloudfront:CreateInvalidation
                   Resource: 
@@ -54,7 +54,7 @@ resources:
                       - - arn:aws:cloudfront
                         - ''
                         - !Ref AWS::AccountId
-                        - distribution/E2SAT9L9HXHEHI
+                        - distribution/${file(./config.json):distribution}
     CodeBuildProject:
       Type: AWS::CodeBuild::Project
       Properties:
@@ -69,13 +69,13 @@ resources:
           Type: LINUX_CONTAINER
           EnvironmentVariables:
             - Name: STAGE
-              Value: dev
+              Value: ${file(./config.json):stage}
               Type: PLAINTEXT
             - Name: WEBSITE_BUCKET
-              Value: oktank-frontend-dev-frontpagewebsitebucket-1hdoaboavp2oh
+              Value: ${file(./config.json):bucket}
               Type: PLAINTEXT
             - Name: CLOUDFRONT_DISTRIBUTION_ID
-              Value: E2SAT9L9HXHEHI
+              Value: ${file(./config.json):distribution}
               Type: PLAINTEXT
         Source:
           Location: https://github.com/rossmcewan/react-redux-realworld-example-app
