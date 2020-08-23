@@ -1,5 +1,5 @@
 service:
-  name: ab3-frontend-deploy
+  name: ab3-frontend-deploy-user-microservice
 
 provider:
   name: aws
@@ -80,6 +80,6 @@ resources:
         Source:
           Location: https://github.com/rossmcewan/react-redux-realworld-example-app
           Type: GITHUB
-        SourceVersion: master
+        SourceVersion: user-microservice
         Triggers:
           Webhook: true
