@@ -18,3 +18,5 @@ npm-debug.log
 .serverless
 
 __deploy/.serverless
+
+build-dev.json
