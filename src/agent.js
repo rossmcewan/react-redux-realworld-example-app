@@ -1,7 +1,7 @@
 import superagentPromise from 'superagent-promise';
 import _superagent from 'superagent';
 
-const superagent = superagentPromise(_superagent, global.Promise); 
+const superagent = superagentPromise(_superagent, global.Promise);  
 
 const API_ROOT = 'https://oktank-backend.herokuapp.com/api';
 const USER_API_ROOT = 'https://3cthybyobe.execute-api.us-east-1.amazonaws.com/api';
