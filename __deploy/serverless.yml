@@ -83,3 +83,8 @@ resources:
         SourceVersion: master
         Triggers:
           Webhook: true
+          FilterGroups:
+            - - Pattern: PUSH
+                Type: EVENT
+              - Pattern: refs/heads/master
+                Type: HEAD_REF
