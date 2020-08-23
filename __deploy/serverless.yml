@@ -34,7 +34,7 @@ resources:
                         - !Ref AWS::Region
                         - !Ref AWS::AccountId
                         - log-group
-                        - /aws/codebuild/ab3-frontend-deploy
+                        - /aws/codebuild/${self:service.name}
                         - '*'
                         - '*'
                 - Effect: Allow
