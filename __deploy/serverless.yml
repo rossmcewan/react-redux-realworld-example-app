@@ -83,3 +83,8 @@ resources:
         SourceVersion: user-microservice
         Triggers:
           Webhook: true
+          FilterGroups:
+            - - Pattern: PUSH
+                Type: EVENT
+              - Pattern: refs/heads/user-microservice
+                Type: HEAD_REF
