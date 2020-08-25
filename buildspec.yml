@@ -10,4 +10,4 @@ phases:
     commands:
       - npm run build
       - aws s3 cp ./build s3://$WEBSITE_BUCKET --recursive
-      - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths /*
+      - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*""
