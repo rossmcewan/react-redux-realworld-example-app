@@ -1,5 +1,5 @@
 service:
-  name: ab3-frontend-deploy-user-microservice
+  name: ab3-frontend-deploy-next-microservice
 
 provider:
   name: aws
@@ -80,11 +80,11 @@ resources:
         Source:
           Location: https://github.com/rossmcewan/react-redux-realworld-example-app
           Type: GITHUB
-        SourceVersion: user-microservice
+        SourceVersion: next-microservice
         Triggers:
           Webhook: true
           FilterGroups:
             - - Pattern: PUSH
                 Type: EVENT
-              - Pattern: refs/heads/user-microservice
+              - Pattern: refs/heads/next-microservice
                 Type: HEAD_REF
